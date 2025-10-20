@@ -301,3 +301,26 @@
     gap: 0.8em;
   }
 }
+
+
+    .album-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .album-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+    .album-card.active {
+      border: 3px solid #f5a623;
+      transform: scale(1.08);
+    }
+    .player img {
+      width: 250px;
+      border-radius: 15px;
+      transition: transform 0.5s ease;
+    }
+    .player img.playing {
+      transform: rotate(10deg) scale(1.05);
+    }
+ 
