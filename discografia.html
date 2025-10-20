@@ -6,26 +6,21 @@
   <title>Discografía - 2D</title>
   <link rel="stylesheet" href="./css/normalize.css">
   <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/discografia.css">
+  <link rel="stylesheet" href="./css/discografia.css">
 
-</head>
 <body>
   <header class="hero">
     <nav class="nav container">
       <div class="nav-logo">
         <h2 class="nav-title">2D (Stuart Pot)</h2>
       </div>
-
       <ul class="nav-link nav-link-menu">
         <li class="nav-items"><a href="index.html" class="nav-links">Inicio</a></li>
         <li class="nav-items"><a href="biografia.html" class="nav-links">Biografía</a></li>
         <li class="nav-items"><a href="fotos.html" class="nav-links">Fotos</a></li>
         <li class="nav-items"><a href="noticias.html" class="nav-links">Noticias</a></li>
       </ul>
-
-    
       <img src="./image/close.svg" alt="cerrar" class="nav-close">
-
       <div class="nav-menu">
         <img src="./image/menu.svg" alt="menu hamburguesa" class="nav-img">
       </div>
@@ -40,7 +35,7 @@
   <main>
     <!-- Reproductor -->
     <section class="player">
-      <img src="./image/demon-days.jpg" alt="Demon Days">
+      <img src="./image/favicon.png" alt="Demon Days" id="album-art">
       <div class="player-info">
         <h2 id="song-title">Feel Good Inc.</h2>
         <h3 id="song-album">Demon Days (2005)</h3>
@@ -54,74 +49,153 @@
         <button id="next">⏭️</button>
         <input type="range" id="volume" min="0" max="1" step="0.05" value="0.7">
       </div>
-      <audio id="audio" src="./music/feel-good-inc.mp3"></audio>
+      <audio id="audio" src="./musica/Gorillaz-fell.mp3"></audio>
     </section>
 
-    <!-- Galería de álbumes -->
+    <!-- Galería -->
     <section class="album-grid">
-      <div class="album-card">
-        <img src="./image/demon-days.jpg" alt="Demon Days">
+      <div class="album-card" data-album="0">
+        <img src="./image/fell-good.jpg" alt="Demon Days">
         <h3>Demon Days (2005)</h3>
-        <ul>
-          <li>Feel Good Inc.</li>
-          <li>Dare</li>
-          <li>Dirty Harry</li>
-        </ul>
       </div>
-      <div class="album-card">
-        <img src="./image/plastic-beach.jpg" alt="Plastic Beach">
+      <div class="album-card" data-album="1">
+        <img src="./image/plastic.jpg" alt="Plastic Beach">
         <h3>Plastic Beach (2010)</h3>
-        <ul>
-          <li>Stylo</li>
-          <li>Superfast Jellyfish</li>
-          <li>On Melancholy Hill</li>
-        </ul>
       </div>
-      <div class="album-card">
-        <img src="./image/the-now-now.jpg" alt="The Now Now">
+      <div class="album-card" data-album="2">
+        <img src="./image/thenow.jpg" alt="The Now Now">
         <h3>The Now Now (2018)</h3>
-        <ul>
-          <li>Humility</li>
-          <li>Tranz</li>
-          <li>Hollywood</li>
-        </ul>
       </div>
-      <div class="album-card">
-        <img src="./image/song-machine.jpg" alt="Song Machine">
+      <div class="album-card" data-album="3">
+        <img src="./image/song.jpg" alt="Song Machine">
         <h3>Song Machine (2020)</h3>
-        <ul>
-          <li>Momentary Bliss</li>
-          <li>Strange Timez</li>
-          <li>Pac-Man</li>
-        </ul>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
     <section class="footer-container container">
       <nav class="nav nav-footer">
-        <h2 class="footer-title">Conoce mas sobre el artista</h2>
+        <h2 class="footer-title">Conoce más sobre el artista</h2>
         <ul class="nav-link nav-link-footer">
           <li class="nav-items"><a href="index.html" class="nav-links">INICIO</a></li>
-          <li class="nav-items"><a href="biografia.html" class="nav-links">BIOGRAFIA</a></li>
+          <li class="nav-items"><a href="biografia.html" class="nav-links">BIOGRAFÍA</a></li>
           <li class="nav-items"><a href="fotos.html" class="nav-links">FOTOS</a></li>
           <li class="nav-items"><a href="noticias.html" class="nav-links">NOTICIAS</a></li>
         </ul>
       </nav>
     </section>
   </footer>
-
-
-  <script src="./js/menu.js"></script>
+        <script src="./js/menu.js"></script>
   <script>
-    // Reproductor JS básico
     const audio = document.getElementById("audio");
     const playBtn = document.getElementById("play");
     const prevBtn = document.getElementById("prev");
     const nextBtn = document.getElementById("next");
     const progress = document.getElementById("progress");
     const volume = document.getElementById("volume");
-    const songTitle = document.getElement
+    const songTitle = document.getElementById("song-title");
+    const songAlbum = document.getElementById("song-album");
+    const albumArt = document.getElementById("album-art");
+    const albumsUI = document.querySelectorAll(".album-card");
 
+    const albums = [
+      {
+        title: "Demon Days (2005)",
+        image: "./image/fell-good.jpg",
+        songs: [
+          { title: "Feel Good Inc.", file: "./musica/Gorillaz-fell.mp3" },
+          { title: "Dare", file: "./musica/dare.mp3" },
+          { title: "Dirty Harry", file: "./musica/dirty.mp3" }
+        ]
+      },
+      {
+        title: "Plastic Beach (2010)",
+        image: "./image/plastic-beach.jpg",
+        songs: [
+          { title: "Stylo", file: "./musica/stylo.mp3" },
+          { title: "Superfast Jellyfish", file: "./musica/superfast.mp3" },
+          { title: "On Melancholy Hill", file: "./musica/melancholy.mp3" }
+        ]
+      },
+      {
+        title: "The Now Now (2018)",
+        image: "./image/the-now-now.jpg",
+        songs: [
+          { title: "Humility", file: "./musica/humility.mp3" },
+          { title: "Tranz", file: "./musica/tranz.mp3" },
+          { title: "Hollywood", file: "./musica/hollywood.mp3" }
+        ]
+      },
+      {
+        title: "Song Machine (2020)",
+        image: "./image/song-machine.jpg",
+        songs: [
+          { title: "Momentary Bliss", file: "./musica/momentary.mp3" },
+          { title: "Strange Timez", file: "./musica/strange.mp3" },
+          { title: "Pac-Man", file: "./musica/pacman.mp3" }
+        ]
+      }
+    ];
+
+    let albumIndex = 0;
+    let songIndex = 0;
+
+    function loadSong(a, s) {
+      const album = albums[a];
+      const song = album.songs[s];
+      audio.src = song.file;
+      songTitle.textContent = song.title;
+      songAlbum.textContent = album.title;
+      albumArt.src = album.image;
+    }
+
+    function playSong() {
+      audio.play();
+      playBtn.textContent = "⏸️";
+      albumArt.classList.add("playing");
+    }
+
+    function pauseSong() {
+      audio.pause();
+      playBtn.textContent = "▶️";
+      albumArt.classList.remove("playing");
+    }
+
+    playBtn.addEventListener("click", () => {
+      audio.paused ? playSong() : pauseSong();
+    });
+
+    nextBtn.addEventListener("click", () => {
+      songIndex = (songIndex + 1) % albums[albumIndex].songs.length;
+      loadSong(albumIndex, songIndex);
+      playSong();
+    });
+
+    prevBtn.addEventListener("click", () => {
+      songIndex = (songIndex - 1 + albums[albumIndex].songs.length) % albums[albumIndex].songs.length;
+      loadSong(albumIndex, songIndex);
+      playSong();
+    });
+
+    volume.addEventListener("input", () => audio.volume = volume.value);
+
+    audio.addEventListener("timeupdate", () => {
+      progress.style.width = (audio.currentTime / audio.duration) * 100 + "%";
+    });
+
+    albumsUI.forEach((card, i) => {
+      card.addEventListener("click", () => {
+        albumsUI.forEach(c => c.classList.remove("active"));
+        card.classList.add("active");
+        albumIndex = i;
+        songIndex = 0;
+        loadSong(albumIndex, songIndex);
+        playSong();
+      });
+    });
+
+    loadSong(0, 0);
+  </script>
+</body>
+</html>
