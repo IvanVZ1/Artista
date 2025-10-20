@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Noticias - 2D</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+      .news-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        max-width: 1200px;
+        margin: 40px auto;
+      }
+      .news-card {
+        background-color: var(--color-card);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        transition: transform var(--transition), box-shadow var(--transition);
+      }
+      .news-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+      }
+      .news-card img {
+        width: 100%;
+        display: block;
+      }
+      .news-content {
+        padding: 15px;
+      }
+      .news-content h3 {
+        margin: 0 0 10px;
+        color: var(--color-primary);
+      }
+      .news-content p {
+        color: var(--color-text-muted);
+        font-size: 0.9rem;
+        margin: 0 0 10px;
+      }
+      .news-content span {
+        font-size: 0.8rem;
+        color: var(--color-secondary);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav container">
+        <div class="nav-logo">
+          <h2 class="nav-title">2D (Stuart Pot)</h2>
+        </div>
+        <ul class="nav-link nav-link-menu">
+          <li class="nav-items">
+            <a href="index.html" class="nav-links">Inicio</a>
+          </li>
+          <li class="nav-items">
+            <a href="biografia.html" class="nav-links">Biografía</a>
+          </li>
+          <li class="nav-items">
+            <a href="discografia.html" class="nav-links">Discografía</a>
+          </li>
+          <li class="nav-items">
+            <a href="fotos.html" class="nav-links">Fotos</a>
+          </li>
+          <li class="nav-items">
+            <a href="noticias.html" class="nav-links">Noticias</a>
+          </li>
+        </ul>
+      </nav>
+      <section class="hero-container container">
+        <h1 class="hero-title">Noticias</h1>
+        <p class="hero-paragraph">
+          Mantente al día con las últimas noticias de 2D y Gorillaz.
+        </p>
+      </section>
+    </header>
+
+    <main>
+      <section class="news-grid">
+        <div class="news-card">
+          <img src="./image/news1.jpg" alt="Nueva gira mundial" />
+          <div class="news-content">
+            <h3>Nueva gira mundial</h3>
+            <span>19 Oct 2025</span>
+            <p>
+              2D anuncia nuevas fechas para la gira de Gorillaz, incluyendo
+              América y Europa.
+            </p>
+          </div>
+        </div>
+        <div class="news-card">
+          <img src="./image/news2.jpg" alt="Colaboración sorpresa" />
+          <div class="news-content">
+            <h3>Colaboración sorpresa</h3>
+            <span>10 Oct 2025</span>
+            <p>
+              Gorillaz lanza un tema junto a un artista internacional muy
+              esperado.
+            </p>
+          </div>
+        </div>
+        <div class="news-card">
+          <img src="./image/news3.jpg" alt="Premios de música" />
+          <div class="news-content">
+            <h3>Premios de música</h3>
+            <span>01 Oct 2025</span>
+            <p>
+              2D recibe reconocimiento por su contribución en el último álbum de
+              Gorillaz.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <section class="footer-container container">
+        <nav class="nav nav-footer">
+          <h2 class="footer-title">Conoce mas sobre el artista</h2>
+          <ul class="nav-link nav-link-footer">
+            <li class="nav-items">
+              <a href="index.html" class="nav-links">INICIO</a>
+            </li>
+            <li class="nav-items">
+              <a href="biografia.html" class="nav-links">BIOGRAFIA</a>
+            </li>
+            <li class="nav-items">
+              <a href="discografia.html" class="nav-links">DISCOGRAFIA</a>
+            </li>
+            <li class="nav-items">
+              <a href="fotos.html" class="nav-links">FOTOS</a>
+            </li>
+            <li class="nav-items">
+              <a href="noticias.html" class="nav-links">NOTICIAS</a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discografía - 2D</title>
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/discografia.css">
+
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav container">
+      <div class="nav-logo">
+        <h2 class="nav-title">2D (Stuart Pot)</h2>
+      </div>
+
+      <ul class="nav-link nav-link-menu">
+        <li class="nav-items"><a href="index.html" class="nav-links">Inicio</a></li>
+        <li class="nav-items"><a href="biografia.html" class="nav-links">Biografía</a></li>
+        <li class="nav-items"><a href="discografia.html" class="nav-links">Discografía</a></li>
+        <li class="nav-items"><a href="fotos.html" class="nav-links">Fotos</a></li>
+        <li class="nav-items"><a href="noticias.html" class="nav-links">Noticias</a></li>
+      </ul>
+
+    
+      <img src="./image/close.svg" alt="cerrar" class="nav-close">
+
+      <div class="nav-menu">
+        <img src="./image/menu.svg" alt="menu hamburguesa" class="nav-img">
+      </div>
+    </nav>
+
+    <section class="hero-container container">
+      <h1 class="hero-title">Discografía</h1>
+      <p class="hero-paragraph">Explora los álbumes y canciones icónicas de Gorillaz con 2D como vocalista principal.</p>
+    </section>
+  </header>
+
+  <main>
+    <!-- Reproductor -->
+    <section class="player">
+      <img src="./image/demon-days.jpg" alt="Demon Days">
+      <div class="player-info">
+        <h2 id="song-title">Feel Good Inc.</h2>
+        <h3 id="song-album">Demon Days (2005)</h3>
+      </div>
+      <div class="player-progress">
+        <div class="player-progress-filled" id="progress"></div>
+      </div>
+      <div class="player-controls">
+        <button id="prev">⏮️</button>
+        <button id="play">▶️</button>
+        <button id="next">⏭️</button>
+        <input type="range" id="volume" min="0" max="1" step="0.05" value="0.7">
+      </div>
+      <audio id="audio" src="./music/feel-good-inc.mp3"></audio>
+    </section>
+
+    <!-- Galería de álbumes -->
+    <section class="album-grid">
+      <div class="album-card">
+        <img src="./image/demon-days.jpg" alt="Demon Days">
+        <h3>Demon Days (2005)</h3>
+        <ul>
+          <li>Feel Good Inc.</li>
+          <li>Dare</li>
+          <li>Dirty Harry</li>
+        </ul>
+      </div>
+      <div class="album-card">
+        <img src="./image/plastic-beach.jpg" alt="Plastic Beach">
+        <h3>Plastic Beach (2010)</h3>
+        <ul>
+          <li>Stylo</li>
+          <li>Superfast Jellyfish</li>
+          <li>On Melancholy Hill</li>
+        </ul>
+      </div>
+      <div class="album-card">
+        <img src="./image/the-now-now.jpg" alt="The Now Now">
+        <h3>The Now Now (2018)</h3>
+        <ul>
+          <li>Humility</li>
+          <li>Tranz</li>
+          <li>Hollywood</li>
+        </ul>
+      </div>
+      <div class="album-card">
+        <img src="./image/song-machine.jpg" alt="Song Machine">
+        <h3>Song Machine (2020)</h3>
+        <ul>
+          <li>Momentary Bliss</li>
+          <li>Strange Timez</li>
+          <li>Pac-Man</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <section class="footer-container container">
+      <nav class="nav nav-footer">
+        <h2 class="footer-title">Conoce mas sobre el artista</h2>
+        <ul class="nav-link nav-link-footer">
+          <li class="nav-items"><a href="index.html" class="nav-links">INICIO</a></li>
+          <li class="nav-items"><a href="biografia.html" class="nav-links">BIOGRAFIA</a></li>
+          <li class="nav-items"><a href="discografia.html" class="nav-links">DISCOGRAFIA</a></li>
+          <li class="nav-items"><a href="fotos.html" class="nav-links">FOTOS</a></li>
+          <li class="nav-items"><a href="noticias.html" class="nav-links">NOTICIAS</a></li>
+        </ul>
+      </nav>
+    </section>
+  </footer>
+
+
+  <script src="./js/menu.js"></script>
+  <script>
+    // Reproductor JS básico
+    const audio = document.getElementById("audio");
+    const playBtn = document.getElementById("play");
+    const prevBtn = document.getElementById("prev");
+    const nextBtn = document.getElementById("next");
+    const progress = document.getElementById("progress");
+    const volume = document.getElementById("volume");
+    const songTitle = document.getElement

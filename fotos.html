@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fotos - 2D</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+      .photo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        max-width: 1200px;
+        margin: 40px auto;
+      }
+      .photo-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: var(--radius);
+        cursor: pointer;
+        box-shadow: var(--shadow);
+        transition: transform var(--transition), box-shadow var(--transition);
+      }
+      .photo-card img {
+        width: 100%;
+        display: block;
+        transition: transform 0.3s ease;
+      }
+      .photo-card:hover img {
+        transform: scale(1.1);
+      }
+      .photo-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+      }
+      .photo-card:hover .photo-overlay {
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav container">
+        <div class="nav-logo">
+          <h2 class="nav-title">2D (Stuart Pot)</h2>
+        </div>
+        <ul class="nav-link nav-link-menu">
+          <li class="nav-items">
+            <a href="index.html" class="nav-links">Inicio</a>
+          </li>
+          <li class="nav-items">
+            <a href="biografia.html" class="nav-links">Biografía</a>
+          </li>
+          <li class="nav-items">
+            <a href="discografia.html" class="nav-links">Discografía</a>
+          </li>
+          <li class="nav-items">
+            <a href="fotos.html" class="nav-links">Fotos</a>
+          </li>
+          <li class="nav-items">
+            <a href="noticias.html" class="nav-links">Noticias</a>
+          </li>
+        </ul>
+        <img src="./image/close.svg" alt="cerrar" class="nav-close" />
+        <div class="nav-menu">
+          <img src="./image/menu.svg" alt="menu hamburguesa" class="nav-img" />
+        </div>
+      </nav>
+      <section class="hero-container container">
+        <h1 class="hero-title">Fotos</h1>
+        <p class="hero-paragraph">
+          Galería de imágenes de 2D y Gorillaz a lo largo de su carrera.
+        </p>
+      </section>
+    </header>
+
+    <main>
+      <section class="photo-grid">
+        <div class="photo-card">
+          <img src="./image/photo1.jpg" alt="2D en concierto" />
+          <div class="photo-overlay">2D en concierto</div>
+        </div>
+        <div class="photo-card">
+          <img src="./image/photo2.jpg" alt="Sesión de fotos" />
+          <div class="photo-overlay">Sesión de fotos</div>
+        </div>
+        <div class="photo-card">
+          <img src="./image/photo3.jpg" alt="Backstage" />
+          <div class="photo-overlay">Backstage</div>
+        </div>
+        <div class="photo-card">
+          <img src="./image/photo4.jpg" alt="Carátula de álbum" />
+          <div class="photo-overlay">Carátula de álbum</div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <section class="footer-container container">
+        <nav class="nav nav-footer">
+          <h2 class="footer-title">Conoce mas sobre el artista</h2>
+          <ul class="nav-link nav-link-footer">
+            <li class="nav-items">
+              <a href="index.html" class="nav-links">INICIO</a>
+            </li>
+            <li class="nav-items">
+              <a href="biografia.html" class="nav-links">BIOGRAFIA</a>
+            </li>
+            <li class="nav-items">
+              <a href="discografia.html" class="nav-links">DISCOGRAFIA</a>
+            </li>
+            <li class="nav-items">
+              <a href="fotos.html" class="nav-links">FOTOS</a>
+            </li>
+            <li class="nav-items">
+              <a href="noticias.html" class="nav-links">NOTICIAS</a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+    </footer>
+    <script src="./js/menu.js"></script>
+  </body>
+</html>
