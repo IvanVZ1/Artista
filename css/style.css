@@ -605,8 +605,8 @@ body {
 
 @media (max-width: 480px) {
   .container {
-    width: 92%;
-    padding: 50px 0;
+    width: 100%;
+    padding: 40px 0;
   }
 
   .hero {
@@ -634,3 +634,5 @@ body {
     gap: 0.8em;
   }
 }
+
+
